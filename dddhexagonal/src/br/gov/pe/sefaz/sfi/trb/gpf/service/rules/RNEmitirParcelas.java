@@ -1,5 +1,7 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.service.rules;
 
+import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOParcelamento;
+
 public class RNEmitirParcelas {
 
     private static RNEmitirParcelas instancia;
@@ -19,7 +21,7 @@ public class RNEmitirParcelas {
         return instancia;
     }
     
-    public void executar(){
+    public void executar(IDPOParcelamento payload){
     	
     }
 }

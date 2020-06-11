@@ -2,16 +2,16 @@ package br.gov.pe.sefaz.sfi.trb.gpf.service.rules;
 
 import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOParcelamento;
 
-public class RNEsgotarParcelamento {
+public class RNFormalizarRegularizacaoDebitos {
 
-    private static RNEsgotarParcelamento instancia;
+	private static RNFormalizarRegularizacaoDebitos instancia;
     
-    private RNEsgotarParcelamento(){}
+    private RNFormalizarRegularizacaoDebitos(){}
 
     //Inicialização do tipo LAZY (preguiçosa)
-    public static RNEsgotarParcelamento getInstance(){
+    public static RNFormalizarRegularizacaoDebitos getInstance(){
         if(instancia == null){
-            instancia = new RNEsgotarParcelamento();
+            instancia = new RNFormalizarRegularizacaoDebitos();
         }
         return instancia;
     }

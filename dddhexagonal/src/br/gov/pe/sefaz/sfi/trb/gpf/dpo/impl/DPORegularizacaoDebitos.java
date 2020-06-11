@@ -2,6 +2,7 @@ package br.gov.pe.sefaz.sfi.trb.gpf.dpo.impl;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Set;
 
 import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParcelamentoParcela;
@@ -12,6 +13,10 @@ import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDDebitosFiscais;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDValores;
 
 public class DPORegularizacaoDebitos extends OTDDebitosFiscais implements IDPOParcelamento {
+
+	public DPORegularizacaoDebitos(OTDDebitosFiscais debito) {
+		super();
+	}
 
 	@Override
 	public OTDValores calcularReducoes() {
@@ -38,13 +43,13 @@ public class DPORegularizacaoDebitos extends OTDDebitosFiscais implements IDPOPa
 	}
 
 	@Override
-	public List<VOParcelamentoParcela> consultarParcelasEmitidas() {
+	public Set<VOParcelamentoParcela> consultarParcelasEmitidas() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<VOParcelamentoParcela> consultarParcelasPagas() {
+	public Set<VOParcelamentoParcela> consultarParcelasPagas() {
 		// TODO Auto-generated method stub
 		return null;
 	}

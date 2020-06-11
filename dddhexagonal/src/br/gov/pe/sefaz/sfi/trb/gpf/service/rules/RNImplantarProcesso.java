@@ -2,16 +2,16 @@ package br.gov.pe.sefaz.sfi.trb.gpf.service.rules;
 
 import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOParcelamento;
 
-public class RNEsgotarParcelamento {
+public class RNImplantarProcesso {
 
-    private static RNEsgotarParcelamento instancia;
+	private static RNImplantarProcesso instancia;
     
-    private RNEsgotarParcelamento(){}
+    private RNImplantarProcesso(){}
 
     //Inicialização do tipo LAZY (preguiçosa)
-    public static RNEsgotarParcelamento getInstance(){
+    public static RNImplantarProcesso getInstance(){
         if(instancia == null){
-            instancia = new RNEsgotarParcelamento();
+            instancia = new RNImplantarProcesso();
         }
         return instancia;
     }

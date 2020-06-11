@@ -1,5 +1,7 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.service.rules;
 
+import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOParcelamento;
+
 public class RNCancelarParcelamento {
 
 	//Inicialização do tipo EAGER (apressada)
@@ -11,7 +13,7 @@ public class RNCancelarParcelamento {
         return instancia;
     }
 	
-    public void executar(){
+    public void executar(IDPOParcelamento payload){
     	
     }
 }

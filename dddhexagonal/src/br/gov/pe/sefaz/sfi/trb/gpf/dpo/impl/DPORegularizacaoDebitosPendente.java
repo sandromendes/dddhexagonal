@@ -12,11 +12,7 @@ import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoPrimario;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDDebitosFiscais;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDValores;
 
-public class DPOParcelamentoEspecial extends OTDDebitosFiscais implements IDPOParcelamento {
-	
-	public DPOParcelamentoEspecial(OTDDebitosFiscais debito) {
-		super();
-	}
+public class DPORegularizacaoDebitosPendente extends OTDDebitosFiscais implements IDPOParcelamento{
 
 	@Override
 	public OTDValores calcularReducoes() {
