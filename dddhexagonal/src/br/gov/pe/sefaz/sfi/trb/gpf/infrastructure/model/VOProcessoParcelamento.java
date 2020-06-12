@@ -1,5 +1,7 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model;
 
+import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso.Protocolo;
+
 public class VOProcessoParcelamento {
 	
 	Protocolo processo;

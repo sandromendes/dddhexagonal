@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class VOProcesso {
 
-	Protocolo protocolo;
-	DataCiencia dataCiencia;
-	NumeroDocumento contribuinte;
+	public Protocolo protocolo;
+	public DataCiencia dataCiencia;
+	public NumeroDocumento contribuinte;
 	
 	public VOProcesso() {
 		super();
@@ -43,16 +43,28 @@ public class VOProcesso {
 		this.contribuinte = contribuinte;
 	}
 	
+	public static class Protocolo {
+		String nuProtocolo;
+		
+		public Protocolo(String nuProtocolo) {
+			this.nuProtocolo = nuProtocolo;
+		}
+	}
+	
+	public static class DataCiencia {
+		Date data;
+		
+		public DataCiencia(Date data) {
+			this.data = data;
+		}
+	}
+	
+	public static class NumeroDocumento {
+		String contribuinte;
+
+		public NumeroDocumento(String contribuinte) {
+			this.contribuinte = contribuinte;
+		}
+	}
 }
 
-class Protocolo {
-	String nuProtocolo;
-}
-
-class DataCiencia {
-	Date data;
-}
-
-class NumeroDocumento {
-	String contribuinte;
-}

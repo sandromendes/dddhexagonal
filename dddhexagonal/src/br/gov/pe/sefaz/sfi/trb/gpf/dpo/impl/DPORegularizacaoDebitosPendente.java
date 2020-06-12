@@ -9,6 +9,7 @@ import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParcelamentoParcela;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParmTpParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoPrimario;
+import br.gov.pe.sefaz.sfi.trb.gpf.service.ExcecaoAtributoNulo;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDDebitosFiscais;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDValores;
 
@@ -60,6 +61,12 @@ public class DPORegularizacaoDebitosPendente extends OTDDebitosFiscais implement
 	public VOParmTpParcelamento consultarParametrizacaoParcelamento() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void validar() throws ExcecaoAtributoNulo{
+		// TODO Auto-generated method stub
+		
 	}
 
 }

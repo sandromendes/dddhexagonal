@@ -1,5 +1,10 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model;
 
+import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso.Protocolo;
+import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoSaldo.Juros;
+import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoSaldo.Multa;
+import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoSaldo.Principal;
+
 public class VOProcessoInfracao {
 	
 	Protocolo processo;

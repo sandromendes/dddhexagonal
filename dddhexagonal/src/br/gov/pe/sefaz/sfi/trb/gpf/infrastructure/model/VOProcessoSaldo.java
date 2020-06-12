@@ -2,6 +2,8 @@ package br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model;
 
 import java.math.BigDecimal;
 
+import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso.Protocolo;
+
 public class VOProcessoSaldo {
 
 	Protocolo protocolo;
@@ -84,28 +86,27 @@ public class VOProcessoSaldo {
 		this.jurosHonorarios = jurosHonorarios;
 	}
 
-}
-
-class Principal {
-	BigDecimal principal;
-}
-
-class Multa { 
-	BigDecimal multa;
-}
-
-class Juros {
-	BigDecimal juros;
-}
-
-class PrincipalHonorarios {
-	BigDecimal principal;
-}
-
-class MultaHonorarios {
-	BigDecimal multa;
-}
-
-class JurosHonorarios {
-	BigDecimal juros;
+	class Principal {
+		BigDecimal principal;
+	}
+	
+	class Multa { 
+		BigDecimal multa;
+	}
+	
+	class Juros {
+		BigDecimal juros;
+	}
+	
+	class PrincipalHonorarios {
+		BigDecimal principal;
+	}
+	
+	class MultaHonorarios {
+		BigDecimal multa;
+	}
+	
+	class JurosHonorarios {
+		BigDecimal juros;
+	}
 }

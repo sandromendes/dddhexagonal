@@ -4,12 +4,14 @@ import br.gov.pe.sefaz.sfi.trb.gpf.dpo.impl.DPOParcelamentoEspecial;
 import br.gov.pe.sefaz.sfi.trb.gpf.dpo.impl.DPOParcelamentoNormal;
 import br.gov.pe.sefaz.sfi.trb.gpf.dpo.impl.DPORegularizacaoDebitos;
 import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOParcelamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.service.ExcecaoAtributoNulo;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.categories.EnumTipoParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDDebitosFiscais;
 
 public class DPOParcelamentoFactory {
 	
-	public static IDPOParcelamento criar(EnumTipoParcelamento tipoParcelamento, OTDDebitosFiscais debito) {
+	public static IDPOParcelamento criar(EnumTipoParcelamento tipoParcelamento, OTDDebitosFiscais debito) 
+			throws ExcecaoAtributoNulo {
 		IDPOParcelamento payload;
 		
 		switch (tipoParcelamento) {
@@ -22,6 +24,8 @@ public class DPOParcelamentoFactory {
 		default :
 			payload = new DPOParcelamentoNormal(debito);
 		}
+		
+		payload.validar();
 		
 		return payload;
 	}

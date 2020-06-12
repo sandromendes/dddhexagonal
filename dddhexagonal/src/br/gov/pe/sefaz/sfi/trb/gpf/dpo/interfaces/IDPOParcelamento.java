@@ -8,6 +8,7 @@ import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParcelamentoParcela;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParmTpParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoPrimario;
+import br.gov.pe.sefaz.sfi.trb.gpf.service.ExcecaoAtributoNulo;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDValores;
 
 public interface IDPOParcelamento {
@@ -19,4 +20,5 @@ public interface IDPOParcelamento {
 	public Set<VOParcelamentoParcela> consultarParcelasPagas();	
 	public String consultarNuParcelamento();
 	public VOParmTpParcelamento consultarParametrizacaoParcelamento();
+	public void validar() throws ExcecaoAtributoNulo;
 }

@@ -2,6 +2,8 @@ package br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model;
 
 import java.math.BigDecimal;
 
+import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso.Protocolo;
+
 public class VOParcelamentoParcela {
 
 	Protocolo protocolo;
