@@ -1,15 +1,15 @@
-package br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces;
+package br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Set;
 
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValores;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParcelamentoParcela;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParmTpParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoPrimario;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.ExcecaoAtributoNulo;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDValores;
 
 public interface IDPOParcelamento {
 	public OTDValores calcularReducoes();

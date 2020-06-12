@@ -1,6 +1,6 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.service.rules;
 
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOParcelamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOParcelamento;
 
 public class RNImplantarProcesso {
 

@@ -1,4 +1,4 @@
-package br.gov.pe.sefaz.sfi.trb.gpf.service.categories;
+package br.gov.pe.sefaz.sfi.trb.gpf.domain.categories;
 
 public enum EnumTipoParcelamento {
 	

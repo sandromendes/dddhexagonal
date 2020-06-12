@@ -1,4 +1,4 @@
-package br.gov.pe.sefaz.sfi.trb.gpf.service.otd;
+package br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer;
 
 import java.util.List;
 

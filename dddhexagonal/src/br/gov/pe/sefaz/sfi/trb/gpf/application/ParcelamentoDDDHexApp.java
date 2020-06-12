@@ -3,15 +3,15 @@ package br.gov.pe.sefaz.sfi.trb.gpf.application;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.DPOParcelamentoFactory;
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOParcelamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.DPOParcelamentoFactory;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.categories.EnumTipoParcelamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOParcelamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDebitosFiscais;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso.DataCiencia;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso.NumeroDocumento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso.Protocolo;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.ExcecaoAtributoNulo;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.categories.EnumTipoParcelamento;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDDebitosFiscais;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.rules.RNFormalizarParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.rules.RNFormalizarRegularizacaoDebitos;
 

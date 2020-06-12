@@ -1,8 +1,8 @@
-package br.gov.pe.sefaz.sfi.trb.gpf.dpo.impl;
+package br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads;
 
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOPagamento;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDValores;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDValoresLiquidacaoPagamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOPagamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValores;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValoresLiquidacaoPagamento;
 
 public class DPOPagamentoAVistaEspecial implements IDPOPagamento{
 

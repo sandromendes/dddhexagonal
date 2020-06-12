@@ -1,10 +1,10 @@
-package br.gov.pe.sefaz.sfi.trb.gpf.dpo.impl;
+package br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOCalculos;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDValores;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOCalculos;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValores;
 
 public class DPOCalculos implements IDPOCalculos {
 

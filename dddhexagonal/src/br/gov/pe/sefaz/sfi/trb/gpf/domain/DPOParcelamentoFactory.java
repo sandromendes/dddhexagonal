@@ -1,12 +1,12 @@
-package br.gov.pe.sefaz.sfi.trb.gpf.dpo;
+package br.gov.pe.sefaz.sfi.trb.gpf.domain;
 
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.impl.DPOParcelamentoEspecial;
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.impl.DPOParcelamentoNormal;
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.impl.DPORegularizacaoDebitos;
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOParcelamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.categories.EnumTipoParcelamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOParcelamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPOParcelamentoEspecial;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPOParcelamentoNormal;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPORegularizacaoDebitos;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDebitosFiscais;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.ExcecaoAtributoNulo;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.categories.EnumTipoParcelamento;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDDebitosFiscais;
 
 public class DPOParcelamentoFactory {
 	

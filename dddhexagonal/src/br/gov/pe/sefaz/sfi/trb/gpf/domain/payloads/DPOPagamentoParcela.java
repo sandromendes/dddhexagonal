@@ -1,16 +1,16 @@
-package br.gov.pe.sefaz.sfi.trb.gpf.dpo.impl;
+package br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads;
 
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOCalculos;
-import br.gov.pe.sefaz.sfi.trb.gpf.dpo.interfaces.IDPOPagamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOCalculos;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOPagamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValores;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValoresLiquidacaoPagamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParcelamentoParcela;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoPrimario;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDValores;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.otd.OTDValoresLiquidacaoPagamento;
 
 public class DPOPagamentoParcela implements IDPOPagamento {
 
