@@ -6,7 +6,7 @@ import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPOParcelamentoEspecial;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPOParcelamentoNormal;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPORegularizacaoDebitos;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDebitosFiscais;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.ExcecaoAtributoNulo;
+import br.gov.pe.sefaz.sfi.trb.gpf.service.error.ExcecaoAtributoNulo;
 
 public class DPOParcelamentoFactory {
 	

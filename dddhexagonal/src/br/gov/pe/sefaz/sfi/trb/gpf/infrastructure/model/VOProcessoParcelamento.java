@@ -54,12 +54,21 @@ public class VOProcessoParcelamento {
 		this.solicitadas = solicitadas;
 	}
 
+	public static class ParcelasConcedidas {
+		int parcelas;
+		
+		public ParcelasConcedidas(int parcelas) {
+			this.parcelas = parcelas;
+		}
+	}
+	
+	public static class ParcelasSolicitadas {
+		int parcelas;
+		
+		public ParcelasSolicitadas(int parcelas) {
+			this.parcelas = parcelas;
+		}
+	}
 }
 
-class ParcelasConcedidas {
-	Long parcelas;
-}
 
-class ParcelasSolicitadas {
-	Long parcelas;
-}

@@ -11,7 +11,7 @@ import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParcelamentoParcela;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParmTpParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoPrimario;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.ExcecaoAtributoNulo;
+import br.gov.pe.sefaz.sfi.trb.gpf.service.error.ExcecaoAtributoNulo;
 
 public class DPORegularizacaoDebitosPendente extends OTDDebitosFiscais implements IDPOParcelamento{
 

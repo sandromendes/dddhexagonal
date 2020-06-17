@@ -11,12 +11,15 @@ import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParcelamentoParcela;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParmTpParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoPrimario;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.ExcecaoAtributoNulo;
+import br.gov.pe.sefaz.sfi.trb.gpf.service.error.ExcecaoAtributoNulo;
 
-public class DPORegularizacaoDebitos extends OTDDebitosFiscais implements IDPOParcelamento {
+public class DPORegularizacaoDebitos implements IDPOParcelamento {
 
+	private OTDDebitosFiscais debito;
+	
 	public DPORegularizacaoDebitos(OTDDebitosFiscais debito) {
 		super();
+		this.debito = debito;
 	}
 
 	@Override
@@ -68,9 +71,18 @@ public class DPORegularizacaoDebitos extends OTDDebitosFiscais implements IDPOPa
 	}
 
 	@Override
-	public void validar() throws ExcecaoAtributoNulo{
-		// TODO Auto-generated method stub
+	public void validar() throws ExcecaoAtributoNulo {
+		if(this.debito.getProcesso() == null ) {
+			throw new ExcecaoAtributoNulo("O atributo Processo é obrigatório");
+		}
 		
+		if(this.debito.getInfracoes() == null) {
+			throw new ExcecaoAtributoNulo("O atributo Infrações é obrigatório");
+		}
+		
+		if(this.debito.getProcessoPrimario() == null) {
+			throw new ExcecaoAtributoNulo("O atributo Processo Primário é obrigatório");
+		}
 	}
 
 }
