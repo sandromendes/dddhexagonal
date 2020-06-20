@@ -1,9 +1,5 @@
 # DDD e Arquitetura Hexagonal - Operações de crédito tribuário
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
 Este é um exemplo de como estruturar uma aplicação de modo a atender aos padrões de arquitetura hexagonal fazendo valer a abordagem de Domain-Driven Design.
 
 O estudo de caso é dirigido sobre o grande domínio de Legislação Tributária, no que diz respeito ao Crédito Tributário: constituição/lançamento do crédito e extinção do crédito por meio de pagamento, seja à vista ou por meio de parcelamento.
@@ -19,7 +15,7 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
 
 ## Info
 
-Sandro Mendes – [@sandromendes](https://twitter.com/zehmendess)
+Sandro Mendes – [@zehmendes](https://twitter.com/zehmendess)
 
 Distribuído sob a licença GNU. Veja `LICENSE` para mais informações.
 
