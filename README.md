@@ -15,7 +15,7 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
 
 ## Info
 
-Sandro Mendes – [@zehmendes](https://twitter.com/zehmendess)
+Sandro Mendes – [@zesandromendes](https://twitter.com/zesandromendes)
 
 Distribuído sob a licença GNU. Veja `LICENSE` para mais informações.
 
