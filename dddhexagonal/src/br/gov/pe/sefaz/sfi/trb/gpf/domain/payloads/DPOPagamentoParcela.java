@@ -1,35 +1,22 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOCalculos;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOPagamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDebitosFiscais;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDProcessoFiscal;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValores;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValoresLiquidacaoPagamento;
 
-public class DPOPagamentoParcela implements IDPOPagamento {
+public class DPOPagamentoParcela extends DPOPagamento implements IDPOPagamento {
 
-	private OTDDebitosFiscais debito;
-	private IDPOCalculos dpoCalculos;
-	private BigDecimal vlPagamento;
 	private List<OTDValores> rateio;
 	
 	public DPOPagamentoParcela(OTDDebitosFiscais debito) {
 		super();
 		this.dpoCalculos = new DPOCalculos();
 		this.debito = debito;
-	}
-
-	public BigDecimal getVlPagamento() {
-		return vlPagamento;
-	}
-
-	public void setVlPagamento(BigDecimal vlPagamento) {
-		this.vlPagamento = vlPagamento;
 	}
 
 	public List<OTDValores> getRateio() {
@@ -55,7 +42,7 @@ public class DPOPagamentoParcela implements IDPOPagamento {
 	}
 
 	@Override
-	public OTDValoresLiquidacaoPagamento calcularValoreLiquidacao() {
+	public OTDValoresLiquidacaoPagamento calcularValorLiquidacao() {
 		// TODO Auto-generated method stub
 		return null;
 	}

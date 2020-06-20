@@ -2,25 +2,38 @@ package br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads;
 
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOPagamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDebitosFiscais;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDProcessoFiscal;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValores;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValoresLiquidacaoPagamento;
 
-public class DPOPagamentoAVistaEspecial implements IDPOPagamento{
+public class DPOPagamentoAVistaEspecial extends DPOPagamento implements IDPOPagamento{
 
-	private OTDDebitosFiscais debito;
+	private OTDValores rateio;
 	
 	public DPOPagamentoAVistaEspecial(OTDDebitosFiscais debito) {
 		super();
 		this.debito = debito;
 	}
 
-	@Override
-	public void ratear() {
-		// TODO Auto-generated method stub
+	public OTDValores getRateio() {
+		return rateio;
+	}
+
+	public void setRateio(OTDValores rateio) {
+		this.rateio = rateio;
 	}
 
 	@Override
-	public OTDValoresLiquidacaoPagamento calcularValoreLiquidacao() {
+	public void ratear() {
+		OTDProcessoFiscal dadosProcesso = debito.getDadosProcesso();
+		
+		OTDValores saldo = new OTDValores(dadosProcesso.getSaldo());
+		
+		this.setRateio(this.dpoCalculos.ratearPorRubricas(saldo, this.getVlPagamento()));
+	}
+
+	@Override
+	public OTDValoresLiquidacaoPagamento calcularValorLiquidacao() {
 		// TODO Auto-generated method stub
 		return null;
 	}

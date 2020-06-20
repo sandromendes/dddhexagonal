@@ -6,7 +6,7 @@ import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValoresLiquidacaoPagamento
 public interface IDPOPagamento {
 	
 	public void ratear();
-	public OTDValoresLiquidacaoPagamento calcularValoreLiquidacao();
+	public OTDValoresLiquidacaoPagamento calcularValorLiquidacao();
 	public OTDValores calcularReducoes();
 	public void validar();
 }
