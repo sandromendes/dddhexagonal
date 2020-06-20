@@ -1,91 +1,27 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOCalculos;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOPagamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDebitosFiscais;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDProcessoFiscal;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValores;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValoresLiquidacaoPagamento;
-import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOParcelamentoParcela;
-import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento;
-import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoPrimario;
 
 public class DPOPagamentoParcela implements IDPOPagamento {
 
-	private String nuDocumentoArrecadado;
-	private List<VOProcessoPrimario> processosPrimarios;
-	private VOProcessoParcelamento parcelamento;
-	private List<VOParcelamentoParcela> parcelas;
-	private String nuParcela;
-	private Date dtVencimento;
-	private Date dtPagamento;
+	private OTDDebitosFiscais debito;
+	private IDPOCalculos dpoCalculos;
 	private BigDecimal vlPagamento;
 	private List<OTDValores> rateio;
-	private List<OTDValores> saldos;
-	private IDPOCalculos dpoCalculos;
 	
-	public DPOPagamentoParcela(IDPOCalculos dpoCalculos, List<OTDValores> saldos) {
+	public DPOPagamentoParcela(OTDDebitosFiscais debito) {
 		super();
-		this.dpoCalculos = dpoCalculos;
-		this.saldos = saldos;
-	}
-	
-	public String getNuDocumentoArrecadado() {
-		return nuDocumentoArrecadado;
-	}
-
-	public void setNuDocumentoArrecadado(String nuDocumentoArrecadado) {
-		this.nuDocumentoArrecadado = nuDocumentoArrecadado;
-	}
-
-	public List<VOProcessoPrimario> getProcessosPrimarios() {
-		return processosPrimarios;
-	}
-
-	public void setProcessosPrimarios(List<VOProcessoPrimario> processosPrimarios) {
-		this.processosPrimarios = processosPrimarios;
-	}
-
-	public VOProcessoParcelamento getParcelamento() {
-		return parcelamento;
-	}
-
-	public void setParcelamento(VOProcessoParcelamento parcelamento) {
-		this.parcelamento = parcelamento;
-	}
-
-	public List<VOParcelamentoParcela> getParcelas() {
-		return parcelas;
-	}
-
-	public void setParcelas(List<VOParcelamentoParcela> parcelas) {
-		this.parcelas = parcelas;
-	}
-
-	public String getNuParcela() {
-		return nuParcela;
-	}
-
-	public void setNuParcela(String nuParcela) {
-		this.nuParcela = nuParcela;
-	}
-
-	public Date getDtVencimento() {
-		return dtVencimento;
-	}
-
-	public void setDtVencimento(Date dtVencimento) {
-		this.dtVencimento = dtVencimento;
-	}
-
-	public Date getDtPagamento() {
-		return dtPagamento;
-	}
-
-	public void setDtPagamento(Date dtPagamento) {
-		this.dtPagamento = dtPagamento;
+		this.dpoCalculos = new DPOCalculos();
+		this.debito = debito;
 	}
 
 	public BigDecimal getVlPagamento() {
@@ -103,18 +39,19 @@ public class DPOPagamentoParcela implements IDPOPagamento {
 	public void setRateio(List<OTDValores> rateio) {
 		this.rateio = rateio;
 	}
-	
-	public List<OTDValores> getSaldos() {
-		return saldos;
-	}
 
-	public void setSaldos(List<OTDValores> saldos) {
-		this.saldos = saldos;
-	}
-
+	@Override
 	public void ratear() {
-		this.setRateio(this.dpoCalculos
-				.ratearPorProcessos(this.getSaldos(), this.getVlPagamento()));
+		List<OTDProcessoFiscal> listaDadosProcesso = debito.getDadosParcelamento()
+				.getListaDadosProcessos();
+		
+		List<OTDValores> saldos = new ArrayList<OTDValores>();
+		
+		for (OTDProcessoFiscal otdProcessoFiscal : listaDadosProcesso) {
+			saldos.add(new OTDValores(otdProcessoFiscal.getSaldo()));
+		}
+		
+		this.setRateio(this.dpoCalculos.ratearPorProcessos(saldos, this.getVlPagamento()));
 	}
 
 	@Override
@@ -127,5 +64,10 @@ public class DPOPagamentoParcela implements IDPOPagamento {
 	public OTDValores calcularReducoes() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void validar() {
+		// TODO Auto-generated method stub
 	}
 }

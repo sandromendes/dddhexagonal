@@ -23,4 +23,10 @@ public class DPOPagamentoDAEUnico implements IDPOPagamento {
 		return null;
 	}
 
+	@Override
+	public void validar() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

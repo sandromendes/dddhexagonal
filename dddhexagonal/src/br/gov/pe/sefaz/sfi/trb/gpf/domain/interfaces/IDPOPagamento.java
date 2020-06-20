@@ -8,4 +8,5 @@ public interface IDPOPagamento {
 	public void ratear();
 	public OTDValoresLiquidacaoPagamento calcularValoreLiquidacao();
 	public OTDValores calcularReducoes();
+	public void validar();
 }

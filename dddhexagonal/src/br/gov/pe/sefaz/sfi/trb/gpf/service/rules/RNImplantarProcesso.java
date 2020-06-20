@@ -1,6 +1,6 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.service.rules;
 
-import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOParcelamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOImplantacao;
 
 public class RNImplantarProcesso {
 
@@ -16,7 +16,7 @@ public class RNImplantarProcesso {
         return instancia;
     }
     
-    public void executar(IDPOParcelamento payload){
+    public void executar(IDPOImplantacao payload){
     	
     }
 }

@@ -72,15 +72,15 @@ public class DPOParcelamentoNormal implements IDPOParcelamento {
 
 	@Override
 	public void validar() throws ExcecaoAtributoNulo{
-		if(this.debito.getProcesso() == null ) {
+		if(this.debito.getDadosProcesso().getProcesso() == null ) {
 			throw new ExcecaoAtributoNulo("O atributo Processo é obrigatório");
 		}
 		
-		if(this.debito.getParcelamento() == null) {
+		if(this.debito.getDadosParcelamento().getParcelamento() == null) {
 			throw new ExcecaoAtributoNulo("O atributo Parcelamento é obrigatório");
 		}
 		
-		if(this.debito.getProcessoPrimario() == null) {
+		if(this.debito.getDadosProcesso().getProcessoPrimario() == null) {
 			throw new ExcecaoAtributoNulo("O atributo Processo Primário é obrigatório");
 		}
 	}

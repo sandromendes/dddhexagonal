@@ -72,15 +72,15 @@ public class DPORegularizacaoDebitos implements IDPOParcelamento {
 
 	@Override
 	public void validar() throws ExcecaoAtributoNulo {
-		if(this.debito.getProcesso() == null ) {
+		if(this.debito.getDadosProcesso().getProcesso() == null ) {
 			throw new ExcecaoAtributoNulo("O atributo Processo é obrigatório");
 		}
 		
-		if(this.debito.getInfracoes() == null) {
+		if(this.debito.getDadosProcesso().getInfracoes() == null) {
 			throw new ExcecaoAtributoNulo("O atributo Infrações é obrigatório");
 		}
 		
-		if(this.debito.getProcessoPrimario() == null) {
+		if(this.debito.getDadosProcesso().getProcessoPrimario() == null) {
 			throw new ExcecaoAtributoNulo("O atributo Processo Primário é obrigatório");
 		}
 	}
