@@ -1,8 +1,5 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOPagamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDebitosFiscais;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDProcessoFiscal;
