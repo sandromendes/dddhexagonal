@@ -1,4 +1,4 @@
-package br.gov.pe.sefaz.sfi.trb.gpf.service.rules;
+package br.gov.pe.sefaz.sfi.trb.gpf.service.business;
 
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOParcelamento;
 

@@ -14,9 +14,9 @@ import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso.Protocolo;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento.ParcelasConcedidas;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento.ParcelasSolicitadas;
+import br.gov.pe.sefaz.sfi.trb.gpf.service.business.RNFormalizarParcelamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.service.business.RNFormalizarRegularizacaoDebitos;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.error.ExcecaoAtributoNulo;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.rules.RNFormalizarParcelamento;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.rules.RNFormalizarRegularizacaoDebitos;
 
 public class ParcelamentoDDDHexApp {
 
