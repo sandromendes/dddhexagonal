@@ -3,6 +3,9 @@ package br.gov.pe.sefaz.sfi.trb.gpf.application;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.DPOParcelamentoFactory;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.categories.EnumTipoParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOParcelamento;
@@ -14,18 +17,21 @@ import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso.Protocolo;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento.ParcelasConcedidas;
 import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcessoParcelamento.ParcelasSolicitadas;
+import br.gov.pe.sefaz.sfi.trb.gpf.pagamento.PagamentosTest;
+import br.gov.pe.sefaz.sfi.trb.gpf.service.ParcelamentoService;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.error.ExcecaoAtributoNulo;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.rules.RNFormalizarParcelamento;
-import br.gov.pe.sefaz.sfi.trb.gpf.service.rules.RNFormalizarRegularizacaoDebitos;
+import br.gov.pe.sefaz.sfi.trb.gpf.service.impl.ParcelamentoServiceImpl;
 
 public class ParcelamentoDDDHexApp {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(PagamentosTest.class);
+	private static ParcelamentoService service = new ParcelamentoServiceImpl();
 
 	public static void main(String[] args) {
 		
 		OTDDebitosFiscais debito = new OTDDebitosFiscais();
 		
 		try {
-			
 			//Teste de formalização de parcelamento normal
 			VOProcesso processo = new VOProcesso(new Protocolo("202000000000018"), 
 					new DataCiencia(new SimpleDateFormat("yyyy-MM-dd").parse("2020-06-01")), 
@@ -40,24 +46,23 @@ public class ParcelamentoDDDHexApp {
 			
 			IDPOParcelamento payloadNormal = DPOParcelamentoFactory.criar(EnumTipoParcelamento.NORMAL, debito);
 
-			RNFormalizarParcelamento.getInstance().executar(payloadNormal);
+			service.formalizarParcelamento(payloadNormal);
 			
 			//Teste de formalização de parcelamento especial
 			debito = new OTDDebitosFiscais();			
 			
 			IDPOParcelamento payloadEspecial = DPOParcelamentoFactory.criar(EnumTipoParcelamento.ESPECIAL, debito);
 			
-			RNFormalizarParcelamento.getInstance().executar(payloadEspecial);
+			service.formalizarParcelamento(payloadEspecial);
 			
 			//Teste de formalização de de regularizacao de debitos
 			debito = new OTDDebitosFiscais();
 			
 			IDPOParcelamento payloadRD = DPOParcelamentoFactory.criar(EnumTipoParcelamento.REGULARIZACAO_DEBITOS, debito);
 			
-			RNFormalizarRegularizacaoDebitos.getInstance().executar(payloadRD);
+			service.formalizarRegularizacaoDebitos(payloadRD);
 		} catch (ExcecaoAtributoNulo | ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOG.info(e.getMessage());
 		}
 	}
 }
