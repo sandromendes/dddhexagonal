@@ -12,19 +12,23 @@ Até o momento a forma de execução é bem simples, apenas executando as classe
 
 Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado. Adicione blocos de códigos e, se necessário, screenshots.
 
+## Testes unitários
 
-## Info
+1. Add JUnit5 nas bibliotecas do build path
+2. Em "Run Configurations", na aba Test, escolher o Test Runner JUnit4
+3. Ainda em "Run Configurations", na aba JRE, marcar "Project Excecution Enviroment"
 
-Sandro Mendes – [@zesandromendes](https://twitter.com/zesandromendes)
-
-Distribuído sob a licença GNU. Veja `LICENSE` para mais informações.
-
-[https://github.com/sandromendes/dddhexagonal](https://github.com/sandromendes/)
-
-## Contributing
+## Para contribuir com o projeto
 
 1. Faça o _fork_ do projeto (<https://github.com/sandromendes/dddhexagonal/fork>)
 2. Crie uma _branch_ para sua modificação (`git checkout -b feature/novaFuncionalidade`)
 3. Faça o _commit_ (`git commit -am 'Criando nova função'`)
 4. _Push_ (`git push origin feature/novaFuncionalidade`)
 5. Crie um novo _Pull Request_
+
+## Info
+
+Sandro Mendes – [@zesandromendes](https://twitter.com/zesandromendes)
+Distribuído sob a licença GNU. Veja `LICENSE` para mais informações.
+
+[https://github.com/sandromendes/dddhexagonal](https://github.com/sandromendes/)
