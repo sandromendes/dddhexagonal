@@ -14,7 +14,9 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
 
 ## Testes unitários
 
-1. Add JUnit5 nas bibliotecas do build path
+Para rodar os testes unitários:
+
+1. Adicione a lib JUnit5 nas bibliotecas do build path
 2. Em "Run Configurations", na aba Test, escolher o Test Runner JUnit4
 3. Ainda em "Run Configurations", na aba JRE, marcar "Project Excecution Enviroment"
 
@@ -28,7 +30,8 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
 
 ## Info
 
-Sandro Mendes – [@zesandromendes](https://twitter.com/zesandromendes)
-Distribuído sob a licença GNU. Veja `LICENSE` para mais informações.
+Licença: Distribuído sob a licença GNU. Veja `LICENSE` para mais informações.
 
-[https://github.com/sandromendes/dddhexagonal](https://github.com/sandromendes/)
+Autor: Sandro Mendes – [@zesandromendes](https://twitter.com/zesandromendes)
+
+Repositório: [https://github.com/sandromendes/dddhexagonal](https://github.com/sandromendes/)
