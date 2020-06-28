@@ -1,4 +1,4 @@
-# DDD e Arquitetura Hexagonal - Operações de crédito tribuário
+# Aplicação de DDD e Arquitetura Hexagonal para um software de operações de crédito tribuário
 
 Este é um exemplo de como estruturar uma aplicação de modo a atender aos padrões de arquitetura hexagonal fazendo valer a abordagem de Domain-Driven Design.
 
