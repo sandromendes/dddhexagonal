@@ -2,15 +2,15 @@ package br.gov.pe.sefaz.sfi.trb.gpf.service.business;
 
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOPagamento;
 
-public class RNApropriarPagamento {
+public class RNDesapropriarPagamento {
 
 	// Inicialização do tipo EAGER (apressada)
-	private static final RNApropriarPagamento instancia = new RNApropriarPagamento();
+	private static final RNDesapropriarPagamento instancia = new RNDesapropriarPagamento();
 
-	private RNApropriarPagamento() {
+	private RNDesapropriarPagamento() {
 	}
 
-	public static RNApropriarPagamento getInstance() {
+	public static RNDesapropriarPagamento getInstance() {
 		return instancia;
 	}
 
