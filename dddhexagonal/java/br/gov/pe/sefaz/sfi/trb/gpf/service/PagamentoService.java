@@ -1,5 +1,5 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.service;
 
-public class PagamentoService {
+public interface PagamentoService {
 
 }
