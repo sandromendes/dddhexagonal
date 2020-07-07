@@ -4,7 +4,6 @@ import br.gov.pe.sefaz.sfi.trb.gpf.infrastructure.model.VOProcesso.Protocolo;
 
 public class VOProcessoParcelamento {
 	
-	Protocolo processo;
 	Protocolo parcelamento;
 	ParcelasConcedidas concedidas;
 	ParcelasSolicitadas solicitadas;
@@ -13,21 +12,12 @@ public class VOProcessoParcelamento {
 		super();
 	}
 
-	public VOProcessoParcelamento(Protocolo processo, Protocolo parcelamento, ParcelasConcedidas concedidas,
+	public VOProcessoParcelamento(Protocolo parcelamento, ParcelasConcedidas concedidas,
 			ParcelasSolicitadas solicitadas) {
 		super();
-		this.processo = processo;
 		this.parcelamento = parcelamento;
 		this.concedidas = concedidas;
 		this.solicitadas = solicitadas;
-	}
-
-	public Protocolo getProcesso() {
-		return processo;
-	}
-
-	public void setProcesso(Protocolo processo) {
-		this.processo = processo;
 	}
 
 	public Protocolo getParcelamento() {

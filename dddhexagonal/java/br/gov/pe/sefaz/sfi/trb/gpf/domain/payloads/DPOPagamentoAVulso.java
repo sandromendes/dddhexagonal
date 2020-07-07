@@ -7,11 +7,10 @@ import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDProcessoFiscal;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValores;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValoresLiquidacaoPagamento;
 
-public class DPOPagamentoAVistaEspecial extends DPOPagamento implements IDPOPagamento{
-
+public class DPOPagamentoAVulso extends DPOPagamento implements IDPOPagamento{
 	private OTDValores rateio;
-	
-	public DPOPagamentoAVistaEspecial(OTDDebitosFiscais debito, OTDDocumentoArrecadado dae) {
+
+	public DPOPagamentoAVulso(OTDDebitosFiscais debito, OTDDocumentoArrecadado dae) {
 		super();
 		this.dpoCalculos = new DPOCalculos();
 		this.debito = debito;
@@ -29,9 +28,9 @@ public class DPOPagamentoAVistaEspecial extends DPOPagamento implements IDPOPaga
 	@Override
 	public void ratear() {
 		OTDProcessoFiscal dadosProcesso = debito.getDadosProcesso();
-		
+
 		OTDValores saldo = new OTDValores(dadosProcesso.getSaldo());
-		
+
 		this.setRateio(this.dpoCalculos.ratearPorRubricas(saldo, this.getDae().getVlPagamento()));
 	}
 
@@ -47,12 +46,11 @@ public class DPOPagamentoAVistaEspecial extends DPOPagamento implements IDPOPaga
 
 	@Override
 	public void validar() {
-		
+
 	}
 
 	@Override
 	public DPOPagamento getDadosPagamento() {
 		return this;
 	}
-
 }

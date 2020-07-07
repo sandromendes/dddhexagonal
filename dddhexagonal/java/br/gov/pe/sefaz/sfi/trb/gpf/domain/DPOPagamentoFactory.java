@@ -4,32 +4,41 @@ import br.gov.pe.sefaz.sfi.trb.gpf.domain.categories.EnumTipoPagamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOPagamento;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPOPagamentoAVista;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPOPagamentoAVistaEspecial;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPOPagamentoAVulso;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPOPagamentoDAEUnico;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads.DPOPagamentoParcela;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDebitosFiscais;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDocumentoArrecadado;
 import br.gov.pe.sefaz.sfi.trb.gpf.service.error.ExcecaoAtributoNulo;
 
 public class DPOPagamentoFactory {
 	
-	public static IDPOPagamento criar(EnumTipoPagamento tipoPagamento, OTDDebitosFiscais debito) 
+	private DPOPagamentoFactory() {
+		throw new IllegalStateException("Classe utilitária");
+	}
+	
+	public static IDPOPagamento criar(EnumTipoPagamento tipoPagamento, OTDDebitosFiscais debito, OTDDocumentoArrecadado dae) 
 			throws ExcecaoAtributoNulo {
 		IDPOPagamento payload;
 		
 		switch (tipoPagamento) {
 		case AVISTA:
-			payload = new DPOPagamentoAVista(debito);
+			payload = new DPOPagamentoAVista(debito, dae);
+			break;
 		case AVISTA_ESPECIAL:
-			payload = new DPOPagamentoAVistaEspecial(debito);
+			payload = new DPOPagamentoAVistaEspecial(debito, dae);
+			break;
 		case PARCELA:	
-			payload = new DPOPagamentoParcela(debito);
+			payload = new DPOPagamentoParcela(debito, dae);
+			break;
 		case AVULSO:
-		
-		case DACAO:
-			
-		case ADJUDICACAO:
-			
-		case EXECUCAO_FISCAL:	
+			payload = new DPOPagamentoAVulso(debito, dae);
+			break;
+		case DAE_UNICO:
+			payload = new DPOPagamentoDAEUnico(debito, dae);
+			break;
 		default :
-			payload = new DPOPagamentoAVista(debito);
+			payload = new DPOPagamentoAVista(debito, dae);
 		}
 		
 		payload.validar();
