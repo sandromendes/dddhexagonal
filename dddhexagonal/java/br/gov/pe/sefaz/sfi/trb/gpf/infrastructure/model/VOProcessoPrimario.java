@@ -32,8 +32,12 @@ public class VOProcessoPrimario {
 	public void setQtdInfracoes(QuantidadeInfracoes qtdInfracoes) {
 		this.qtdInfracoes = qtdInfracoes;
 	}
-}
-
-class QuantidadeInfracoes {
-	Long qtdInfracoes;
+	
+	public static class QuantidadeInfracoes {
+		int quantidade;
+		
+		public QuantidadeInfracoes(int quantidade) {
+			this.quantidade = quantidade;
+		}
+	}
 }

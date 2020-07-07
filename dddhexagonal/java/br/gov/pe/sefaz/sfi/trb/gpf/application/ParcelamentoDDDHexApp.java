@@ -62,7 +62,7 @@ public class ParcelamentoDDDHexApp {
 				new NumeroDocumento( "00000191"));
 		debito.getDadosProcesso().setProcesso(processo);
 		
-		VOProcessoParcelamento processoParcelamento = new VOProcessoParcelamento(new Protocolo("202000000000018"), 
+		VOProcessoParcelamento processoParcelamento = new VOProcessoParcelamento( 
 				new Protocolo("202000000000019"), 
 				new ParcelasConcedidas(10), 
 				new ParcelasSolicitadas(10));

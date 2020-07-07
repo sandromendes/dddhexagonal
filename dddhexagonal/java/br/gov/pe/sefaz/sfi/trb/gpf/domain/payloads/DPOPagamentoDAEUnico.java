@@ -1,13 +1,13 @@
 package br.gov.pe.sefaz.sfi.trb.gpf.domain.payloads;
 
 import java.math.BigDecimal;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOCalculos;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.interfaces.IDPOPagamento;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDAEUnico;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDebitosFiscais;
+import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDDocumentoArrecadado;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDProcessoFiscal;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValores;
 import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValoresLiquidacaoPagamento;
@@ -15,14 +15,12 @@ import br.gov.pe.sefaz.sfi.trb.gpf.domain.transfer.OTDValoresLiquidacaoPagamento
 public class DPOPagamentoDAEUnico extends DPOPagamento implements IDPOPagamento {
 
 	private List<OTDValores> rateio;
-	
-	public DPOPagamentoDAEUnico() {
-		super();
-	}
 
-	public DPOPagamentoDAEUnico(OTDDebitosFiscais debito, IDPOCalculos dpoCalculos, String nuDocumentoArrecadado,
-			String nuParcela, Date dtVencimento, Date dtPagamento, BigDecimal vlPagamento) {
-		super(debito, dpoCalculos, nuDocumentoArrecadado, nuParcela, dtVencimento, dtPagamento, vlPagamento);
+	public DPOPagamentoDAEUnico(OTDDebitosFiscais debito, OTDDocumentoArrecadado dae) {
+		super();
+		this.dpoCalculos = new DPOCalculos();
+		this.debito = debito;
+		super.dae = dae;
 	}
 	
 	public List<OTDValores> getRateio() {
@@ -38,31 +36,56 @@ public class DPOPagamentoDAEUnico extends DPOPagamento implements IDPOPagamento 
 		List<OTDProcessoFiscal> listaDadosProcesso = debito.getDadosDAEUnico()
 				.getListaDadosProcessos();
 		
-		List<OTDValores> saldos = new ArrayList<OTDValores>();
+		List<OTDValores> saldos = new ArrayList<>();
 		
 		for (OTDProcessoFiscal otdProcessoFiscal : listaDadosProcesso) {
 			saldos.add(new OTDValores(otdProcessoFiscal.getSaldo()));
 		}
 		
-		this.setRateio(this.dpoCalculos.ratearPorProcessos(saldos, this.getVlPagamento()));
+		this.setRateio(this.dpoCalculos.ratearPorProcessos(saldos, this.getDae().getVlPagamento()));
 	}
 
 	@Override
 	public OTDValoresLiquidacaoPagamento calcularValorLiquidacao() {
-		// TODO Auto-generated method stub
-		return null;
+		OTDDAEUnico dadosDAEUnico = this.debito.getDadosDAEUnico();
+		
+		List<OTDProcessoFiscal> debitosFiscais = dadosDAEUnico.getListaDadosProcessos();
+		
+		OTDValoresLiquidacaoPagamento liquidacaoDAEUnico = new OTDValoresLiquidacaoPagamento();
+		
+		for (OTDProcessoFiscal otdProcessoFiscal : debitosFiscais) {
+			OTDValoresLiquidacaoPagamento liquidacaoProcesso = new 
+					OTDValoresLiquidacaoPagamento(otdProcessoFiscal.getSaldo());
+
+			liquidacaoProcesso.setReducoes(this.calcularReducoes());
+			
+			liquidacaoDAEUnico.add(liquidacaoProcesso);
+		}
+
+		return liquidacaoDAEUnico;
 	}
 
 	@Override
 	public OTDValores calcularReducoes() {
-		// TODO Auto-generated method stub
-		return null;
+		OTDValores reducoes = new OTDValores();
+		reducoes.setVlPrincipal(BigDecimal.ZERO);
+		reducoes.setVlJuros(new BigDecimal(50));
+		reducoes.setVlMulta(new BigDecimal(30));
+		reducoes.setVlHonorarios(BigDecimal.ZERO);
+		reducoes.setVlJurosHonorarios(new BigDecimal(50));
+		reducoes.setVlMultaHonorarios(new BigDecimal(30));
+		
+		return reducoes;
 	}
 
 	@Override
 	public void validar() {
-		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public DPOPagamento getDadosPagamento() {
+		return this;
 	}
 
 }

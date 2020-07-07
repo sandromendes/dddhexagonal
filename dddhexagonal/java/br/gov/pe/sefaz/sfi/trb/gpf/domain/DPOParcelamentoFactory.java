@@ -10,6 +10,10 @@ import br.gov.pe.sefaz.sfi.trb.gpf.service.error.ExcecaoAtributoNulo;
 
 public class DPOParcelamentoFactory {
 	
+	private DPOParcelamentoFactory() {
+		throw new IllegalStateException("Classe utilitária");
+	}
+	
 	public static IDPOParcelamento criar(EnumTipoParcelamento tipoParcelamento, OTDDebitosFiscais debito) 
 			throws ExcecaoAtributoNulo {
 		IDPOParcelamento payload;
@@ -17,10 +21,13 @@ public class DPOParcelamentoFactory {
 		switch (tipoParcelamento) {
 		case NORMAL:
 			payload = new DPOParcelamentoNormal(debito);
+			break;
 		case REGULARIZACAO_DEBITOS:
 			payload = new DPORegularizacaoDebitos(debito);
+			break;
 		case ESPECIAL:	
 			payload = new DPOParcelamentoEspecial(debito);
+			break;
 		default :
 			payload = new DPOParcelamentoNormal(debito);
 		}

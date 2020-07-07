@@ -86,27 +86,75 @@ public class VOProcessoSaldo {
 		this.jurosHonorarios = jurosHonorarios;
 	}
 
-	class Principal {
-		BigDecimal principal;
+	public static class Principal {
+		BigDecimal value;
+
+		public Principal(BigDecimal value) {
+			this.value = value;
+		}
+
+		public BigDecimal value() {
+			return this.value;
+		}
 	}
 	
-	class Multa { 
-		BigDecimal multa;
+	public static class Multa { 
+		BigDecimal value;
+
+		public Multa(BigDecimal value) {
+			this.value = value;
+		}
+		
+		public BigDecimal value() {
+			return this.value;
+		}
 	}
 	
-	class Juros {
-		BigDecimal juros;
+	public static class Juros {
+		BigDecimal value;
+
+		public Juros(BigDecimal value) {
+			this.value = value;
+		}
+		
+		public BigDecimal value() {
+			return this.value;
+		}
 	}
 	
-	class PrincipalHonorarios {
-		BigDecimal principal;
+	public static class PrincipalHonorarios {
+		BigDecimal value;
+
+		public PrincipalHonorarios(BigDecimal value) {
+			this.value = value;
+		}
+
+		public BigDecimal value() {
+			return this.value;
+		}
 	}
 	
-	class MultaHonorarios {
-		BigDecimal multa;
+	public static class MultaHonorarios {
+		BigDecimal value;
+		
+		public MultaHonorarios(BigDecimal value) {
+			this.value = value;
+		}
+
+		public BigDecimal value() {
+			return this.value;
+		}
 	}
 	
-	class JurosHonorarios {
-		BigDecimal juros;
+	public static class JurosHonorarios {
+		BigDecimal value;
+		
+		public JurosHonorarios(BigDecimal value) {
+			this.value = value;
+		}
+
+		public BigDecimal value() {
+			return this.value;
+		}
 	}
 }
